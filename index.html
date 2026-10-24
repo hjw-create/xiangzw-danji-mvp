@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>开产高峰换羽日历 · 产蛋死淘台账 · 向紫微</title>
+<meta name="description" content="中小蛋鸡户：开产—高峰—换羽节点日历 + 产蛋/死淘简易日记录。非诊疗、不开药、不卖疫苗。"/>
+<style>
+:root{--ink:#3a2a14;--muted:#7a6548;--line:#ead7b0;--bg:#fbf6ea;--card:#fffdf8;--accent:#c47a1a;--accent2:#e0a045;--warn:#9a5b12}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);line-height:1.65;background:radial-gradient(900px 420px at 10% -10%,#ffe6b8,transparent 55%),radial-gradient(700px 360px at 100% 0,#f3e2c4,transparent 48%),var(--bg)}
+.top{position:sticky;top:0;z-index:10;background:rgba(251,246,234,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-in{max-width:900px;margin:0 auto;padding:10px 16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.brand{font-weight:800}.nav a{margin-left:6px;text-decoration:none;color:var(--ink);font-size:13px;padding:6px 10px;border-radius:999px}
+.nav a:hover{background:#fff;border:1px solid var(--line)}
+.wrap{max-width:900px;margin:0 auto;padding:18px 16px 56px}
+.kicker{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:#fff3dd;border:1px solid #efd3a8;border-radius:999px;padding:4px 10px;margin-bottom:10px}
+h1{margin:0 0 10px;font-size:clamp(28px,5vw,40px);line-height:1.2}
+.lead{color:var(--muted);font-size:17px;max-width:42em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px}
+.btn-p{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}.btn-g{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn-block{width:100%}
+.warn{margin:16px 0;padding:14px 16px;border-radius:14px;background:#fff8ee;border:1px solid #efd3a8;border-left:6px solid var(--warn)}
+.warn h2{margin:0 0 6px;font-size:16px;color:var(--warn)}
+.grid{display:grid;gap:12px}@media(min-width:760px){.g2{grid-template-columns:1.05fr .95fr}.g3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(58,42,20,.05)}
+.card h2{margin:0 0 8px;font-size:18px}.card p,.card li{color:var(--muted)}
+.phase{padding:12px;border-radius:14px;background:#fff;border:1px dashed var(--line);text-align:center}
+.phase b{display:block;font-size:18px;color:var(--accent);margin-bottom:4px}
+.q{margin:0 0 10px;padding:10px 12px;background:#fff8ee;border-left:3px solid var(--accent);border-radius:0 10px 10px 0}
+.q cite{display:block;margin-top:4px;font-style:normal;font-size:12px;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{position:relative;padding:10px 10px 10px 46px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:#fff}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:10px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+label.ck{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:12px;margin:0 0 8px;background:#fff;cursor:pointer}
+label.ck input{margin-top:3px;width:18px;height:18px;accent-color:var(--accent)}
+.field{margin:0 0 10px}.field>span{display:block;font-size:13px;font-weight:700;margin-bottom:4px}
+.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+.field textarea{min-height:70px;resize:vertical}
+.row2{display:grid;gap:10px}@media(min-width:560px){.row2{grid-template-columns:1fr 1fr}}
+.bar{height:8px;background:#f0e2c8;border-radius:999px;overflow:hidden;margin:6px 0 8px}.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#e0a045,var(--accent))}
+.msg{min-height:1.3em;font-weight:700}.ok{color:#7a4a08}.err{color:#8b2e1a}
+.item{border:1px dashed var(--line);border-radius:10px;padding:8px 10px;margin-bottom:8px;font-size:13px;background:#fff}.item b{display:block}
+.sec{margin-top:16px}footer{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+code{background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.tl{border-left:3px solid #e0a045;margin:8px 0 0 6px;padding-left:14px}.tl li{margin:0 0 10px;list-style:none}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in"><div class="brand">开产高峰换羽 · 产蛋死淘</div><nav class="nav"><a href="#phase">阶段节点</a><a href="#egg">产蛋死淘</a><a href="#book">预约试填</a><a href="#hist">本机记录</a></nav></div></header>
+<main class="wrap">
+<section>
+  <div class="kicker">沈阳农业大学 · 动物科学 · 课程 MVP</div>
+  <h1>开产到换羽，阶段别靠喊</h1>
+  <p class="lead">给中小规模<strong>蛋鸡养殖户</strong>：一张<strong>开产—高峰—换羽</strong>节点日历，加上产蛋枚数与死淘简易日记录。本页不做免疫换料清单，也不开药、不卖疫苗。</p>
+  <div class="chips"><span class="chip">向紫微 · 2023109010</span><span class="chip">蛋鸡节点日历·产蛋死淘轻台账</span><span class="chip">非诊疗 · 不卖疫苗</span></div>
+  <div class="cta"><a class="btn btn-p" href="#phase">勾本周阶段</a><a class="btn btn-g" href="#egg">记产蛋死淘</a></div>
+</section>
+<section class="warn">
+  <h2>边界三句</h2>
+  <ul>
+    <li>只做开产/高峰/换羽阶段提醒 + 产蛋与死淘留痕，方便换班对上「现在到哪一阶段」。</li>
+    <li>非诊疗、不开药、不卖疫苗；免疫换料另页另做，不在这里混。</li>
+    <li>记录只存在这台设备浏览器里。</li>
+  </ul>
+</section>
+<section class="sec grid g3">
+  <div class="phase"><b>开产</b><span style="color:var(--muted);font-size:13px">见蛋后进表，别只口头说「好像开了」</span></div>
+  <div class="phase"><b>高峰</b><span style="color:var(--muted);font-size:13px">高峰区间标清，产蛋波动能对照阶段</span></div>
+  <div class="phase"><b>换羽</b><span style="color:var(--muted);font-size:13px">换羽起止写上，死淘别和阶段脱节</span></div>
+</section>
+<section class="sec grid g2">
+  <article class="card">
+    <h2>要对上的三件事</h2>
+    <blockquote class="q">开产、高峰、换羽靠经验喊，换班后说不清现在到哪段。<cite>第1周假设 · 阶段口头化</cite></blockquote>
+    <blockquote class="q">产蛋和死淘分本记，复盘时对不上是哪天掉下来的。<cite>第1周假设 · 台账分散</cite></blockquote>
+    <blockquote class="q">忙季只记得「鸡还在下」，阶段节点漏记后不好解释。<cite>第1周假设 · 忙季漏记</cite></blockquote>
+  </article>
+  <article class="card">
+    <h2>三步</h2>
+    <ol class="steps">
+      <li>在「阶段节点」勾清本周处于开产/高峰/换羽哪一段，五项看完再保存。</li>
+      <li>每天补产蛋枚数与死淘数，一句备注即可。</li>
+      <li>愿试填就留手机；看病开药仍找线下兽医。</li>
+    </ol>
+  </article>
+</section>
+<section class="sec card" id="phase">
+  <h2>本周阶段节点（开产—高峰—换羽）</h2>
+  <p>五项都看过才能保存。目标：换班打开就能说清「现在哪一段」。</p>
+  <div class="bar"><i id="bar"></i></div>
+  <p id="barText" style="margin:0 0 10px;font-size:13px;color:var(--muted)">已看 0 / 5</p>
+  <form id="phaseForm">
+    <label class="ck"><input type="checkbox" name="c1"/> 本周主阶段已勾清（开产 / 高峰 / 换羽 三选一写在备注）</label>
+    <label class="ck"><input type="checkbox" name="c2"/> 阶段起止日期已写，不是「这几天」</label>
+    <label class="ck"><input type="checkbox" name="c3"/> 棚号或批次已写清，家里人能对上</label>
+    <label class="ck"><input type="checkbox" name="c4"/> 产蛋/死淘将按日另记，不和阶段口头混谈</label>
+    <label class="ck"><input type="checkbox" name="c5"/> 边界自检：本页不做免疫换料清单，不开药不卖疫苗</label>
+    <div class="row2">
+      <label class="field"><span>主阶段</span>
+        <select name="stage" required>
+          <option value="">请选择</option>
+          <option>开产</option>
+          <option>高峰</option>
+          <option>换羽</option>
+        </select>
+      </label>
+      <label class="field"><span>棚 / 批次</span><input name="batch" placeholder="例如：东棚 A 批"/></label>
+    </div>
+    <div class="row2">
+      <label class="field"><span>阶段起始日</span><input type="date" name="day"/></label>
+      <label class="field"><span>填写人</span><input name="who" placeholder="户主 / 家属"/></label>
+    </div>
+    <button class="btn btn-p btn-block" type="submit">保存阶段节点到本机</button>
+    <p class="msg" id="phaseMsg"></p>
+  </form>
+</section>
+<section class="sec card" id="egg">
+  <h2>产蛋 / 死淘简易日记录</h2>
+  <p>一天一笔。复盘时按棚号往上翻，能对上阶段。</p>
+  <form id="eggForm">
+    <div class="row2">
+      <label class="field"><span>日期时间</span><input type="datetime-local" name="when" required/></label>
+      <label class="field"><span>棚 / 批次</span><input name="batch" required placeholder="与上面阶段同一棚"/></label>
+    </div>
+    <div class="row2">
+      <label class="field"><span>产蛋（枚，大约即可）</span><input name="eggs" required placeholder="例如：1860"/></label>
+      <label class="field"><span>死淘（只）</span><input name="cull" required placeholder="例如：2；没有填 0"/></label>
+    </div>
+    <label class="field"><span>一句备注</span><textarea name="note" placeholder="例如：高峰第3周；死淘2只已捡出，不开药。"></textarea></label>
+    <button class="btn btn-p btn-block" type="submit">保存这条产蛋死淘</button>
+    <p class="msg" id="eggMsg"></p>
+  </form>
+</section>
+<section class="sec card">
+  <h2>本周节奏</h2>
+  <ul class="tl">
+    <li><strong>Day1–2</strong>定三阶段文案与五项勾选，琥珀暖色区分免疫换料青绿页。</li>
+    <li><strong>Day3–5</strong>上线单页，电脑手机走通保存。</li>
+    <li><strong>Day6–7</strong>电话试填提纲，样本只计蛋鸡户主责人。</li>
+  </ul>
+</section>
+<section class="sec card" id="book">
+  <h2>预约两周试填</h2>
+  <form id="bookForm">
+    <div class="row2">
+      <label class="field"><span>怎么称呼</span><input name="name" required placeholder="老张 / 户主"/></label>
+      <label class="field"><span>手机号</span><input name="phone" required pattern="1[3-9]\d{9}" placeholder="11位"/></label>
+    </div>
+    <label class="field"><span>最想先记清的一件事</span><textarea name="wish" placeholder="例如：换羽起止老说岔；死淘和阶段对不上"></textarea></label>
+    <button class="btn btn-p btn-block" type="submit">留下预约（仅存本机）</button>
+    <p class="msg" id="bookMsg"></p>
+    <p style="font-size:12px;color:var(--muted)">向紫微 · 15542177260 · 沈阳农业大学动物科学与医学学院 · 动物科学</p>
+  </form>
+</section>
+<section class="sec card" id="hist">
+  <h2>本机最近记录</h2>
+  <div id="list"></div>
+  <button class="btn btn-g" type="button" id="clear">清空本机记录</button>
+</section>
+<footer>
+  <p>向紫微（学号 2023109010）· 开产高峰换羽日历·产蛋死淘轻台账 · 路径 B</p>
+  <p>公网：<code>https://hjw-create.github.io/xiangzw-danji-mvp/</code></p>
+</footer>
+</main>
+<script>
+(function(){
+  var KEY='xiangzw_danji_v1';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(list){localStorage.setItem(KEY,JSON.stringify(list.slice(0,40)));render()}
+  function stamp(){var d=new Date(),p=function(n){return n<10?'0'+n:''+n};return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes())}
+  function render(){var list=load(),box=document.getElementById('list');if(!list.length){box.innerHTML="<p style='color:var(--muted);font-size:13px'>还没有记录。先勾阶段或记一条产蛋死淘。</p>";return}box.innerHTML=list.map(function(r){return "<div class='item'><b>"+r.type+" · "+r.at+"</b>"+r.summary+"</div>"}).join('')}
+  function bar(){var boxes=document.querySelectorAll('#phaseForm input[type=checkbox]');var n=0;boxes.forEach(function(b){if(b.checked)n++});document.getElementById('bar').style.width=(n/boxes.length*100)+'%';document.getElementById('barText').textContent='已看 '+n+' / '+boxes.length}
+  document.querySelectorAll('#phaseForm input[type=checkbox]').forEach(function(b){b.addEventListener('change',bar)});bar();
+  document.getElementById('phaseForm').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target);var n=['c1','c2','c3','c4','c5'].filter(function(k){return fd.get(k)}).length;var msg=document.getElementById('phaseMsg');if(n<5){msg.className='msg err';msg.textContent='五项都看过再保存。';return}var list=load();list.unshift({type:'阶段节点',at:stamp(),summary:'阶段：'+fd.get('stage')+'；棚：'+(fd.get('batch')||'未填')+'；起始：'+(fd.get('day')||'未填')+'；填写人：'+(fd.get('who')||'未填')});save(list);msg.className='msg ok';msg.textContent='阶段已保存在本机。'};
+  document.getElementById('eggForm').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target);var list=load();list.unshift({type:'产蛋死淘',at:stamp(),summary:'时间：'+fd.get('when')+'；棚：'+fd.get('batch')+'；产蛋：'+fd.get('eggs')+'；死淘：'+fd.get('cull')+'；备注：'+((fd.get('note')||'无').toString().trim()||'无')});save(list);document.getElementById('eggMsg').className='msg ok';document.getElementById('eggMsg').textContent='已保存。看病开药请找线下兽医。'};
+  document.getElementById('bookForm').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target);var phone=(fd.get('phone')||'').toString();var msg=document.getElementById('bookMsg');if(!/^1[3-9]\d{9}$/.test(phone)){msg.className='msg err';msg.textContent='请填写11位手机号。';return}var list=load();list.unshift({type:'预约试填',at:stamp(),summary:'称呼：'+fd.get('name')+'；手机：'+phone+'；想记清：'+((fd.get('wish')||'未写').toString().trim()||'未写')});save(list);msg.className='msg ok';msg.textContent='预约草稿在本机。';e.target.reset()};
+  document.getElementById('clear').onclick=function(){if(!confirm('清空本机记录？'))return;localStorage.removeItem(KEY);render()};
+  render();
+})();
+</script>
+</body>
+</html>
