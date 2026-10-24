@@ -6,15 +6,15 @@
 <title>开产高峰换羽日历 · 产蛋死淘台账 · 向紫微</title>
 <meta name="description" content="中小蛋鸡户：开产—高峰—换羽节点日历 + 产蛋/死淘简易日记录。非诊疗、不开药、不卖疫苗。"/>
 <style>
-:root{--ink:#3a2a14;--muted:#7a6548;--line:#ead7b0;--bg:#fbf6ea;--card:#fffdf8;--accent:#c47a1a;--accent2:#e0a045;--warn:#9a5b12}
+:root{--ink:#1c3328;--muted:#5a6d62;--line:#cfe0d6;--bg:#eef6f1;--card:#fbfefb;--accent:#2f6b52;--accent2:#5a9a6a;--warn:#9a6b20}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);line-height:1.65;background:radial-gradient(900px 420px at 10% -10%,#ffe6b8,transparent 55%),radial-gradient(700px 360px at 100% 0,#f3e2c4,transparent 48%),var(--bg)}
-.top{position:sticky;top:0;z-index:10;background:rgba(251,246,234,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+body{margin:0;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);line-height:1.65;background:radial-gradient(900px 420px at 10% -10%,#cfe8d8,transparent 55%),radial-gradient(700px 360px at 100% 0,#dcefd8,transparent 48%),var(--bg)}
+.top{position:sticky;top:0;z-index:10;background:rgba(238,246,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .top-in{max-width:900px;margin:0 auto;padding:10px 16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
 .brand{font-weight:800}.nav a{margin-left:6px;text-decoration:none;color:var(--ink);font-size:13px;padding:6px 10px;border-radius:999px}
 .nav a:hover{background:#fff;border:1px solid var(--line)}
 .wrap{max-width:900px;margin:0 auto;padding:18px 16px 56px}
-.kicker{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:#fff3dd;border:1px solid #efd3a8;border-radius:999px;padding:4px 10px;margin-bottom:10px}
+.kicker{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:#e3f0e8;border:1px solid #b9d6c0;border-radius:999px;padding:4px 10px;margin-bottom:10px}
 h1{margin:0 0 10px;font-size:clamp(28px,5vw,40px);line-height:1.2}
 .lead{color:var(--muted);font-size:17px;max-width:42em}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
@@ -25,11 +25,11 @@ h1{margin:0 0 10px;font-size:clamp(28px,5vw,40px);line-height:1.2}
 .warn{margin:16px 0;padding:14px 16px;border-radius:14px;background:#fff8ee;border:1px solid #efd3a8;border-left:6px solid var(--warn)}
 .warn h2{margin:0 0 6px;font-size:16px;color:var(--warn)}
 .grid{display:grid;gap:12px}@media(min-width:760px){.g2{grid-template-columns:1.05fr .95fr}.g3{grid-template-columns:repeat(3,1fr)}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(58,42,20,.05)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(28,51,40,.05)}
 .card h2{margin:0 0 8px;font-size:18px}.card p,.card li{color:var(--muted)}
 .phase{padding:12px;border-radius:14px;background:#fff;border:1px dashed var(--line);text-align:center}
 .phase b{display:block;font-size:18px;color:var(--accent);margin-bottom:4px}
-.q{margin:0 0 10px;padding:10px 12px;background:#fff8ee;border-left:3px solid var(--accent);border-radius:0 10px 10px 0}
+.q{margin:0 0 10px;padding:10px 12px;background:#e3f0e8;border-left:3px solid var(--accent);border-radius:0 10px 10px 0}
 .q cite{display:block;margin-top:4px;font-style:normal;font-size:12px;color:var(--muted)}
 .steps{list-style:none;margin:0;padding:0;counter-reset:s}
 .steps li{position:relative;padding:10px 10px 10px 46px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:#fff}
@@ -40,12 +40,12 @@ label.ck input{margin-top:3px;width:18px;height:18px;accent-color:var(--accent)}
 .field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
 .field textarea{min-height:70px;resize:vertical}
 .row2{display:grid;gap:10px}@media(min-width:560px){.row2{grid-template-columns:1fr 1fr}}
-.bar{height:8px;background:#f0e2c8;border-radius:999px;overflow:hidden;margin:6px 0 8px}.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#e0a045,var(--accent))}
-.msg{min-height:1.3em;font-weight:700}.ok{color:#7a4a08}.err{color:#8b2e1a}
+.bar{height:8px;background:#d7e8de;border-radius:999px;overflow:hidden;margin:6px 0 8px}.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#5a9a6a,var(--accent))}
+.msg{min-height:1.3em;font-weight:700}.ok{color:#0b6b4a}.err{color:#8b2e1a}
 .item{border:1px dashed var(--line);border-radius:10px;padding:8px 10px;margin-bottom:8px;font-size:13px;background:#fff}.item b{display:block}
 .sec{margin-top:16px}footer{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 code{background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 6px}
-.tl{border-left:3px solid #e0a045;margin:8px 0 0 6px;padding-left:14px}.tl li{margin:0 0 10px;list-style:none}
+.tl{border-left:3px solid #8fbc8f;margin:8px 0 0 6px;padding-left:14px}.tl li{margin:0 0 10px;list-style:none}
 </style>
 </head>
 <body>
